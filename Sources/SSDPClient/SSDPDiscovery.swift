@@ -88,7 +88,7 @@ public class SSDPDiscovery {
             }
         }
 
-        queue.asyncAfter(deadline: .now() + duration) { [unowned self] in
+        queue.asyncAfter(deadline: .now() + duration) { [weak self] in
             self.stop()
         }
     }
